@@ -4,6 +4,8 @@ def split_array(array, array_size)
   array.each_slice(array_size).to_a
 end
 
+
+
 # Driver code - don't touch anything below this line.
 puts "TESTING split_array..."
 puts

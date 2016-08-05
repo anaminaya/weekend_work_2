@@ -15,25 +15,24 @@
 # Superhero needs a grab_tool method, that sets the has_special_tool attribute to true.
 
 class Superhero
-attr_accessor :name, :hitpoints, :attack
+  attr_accessor :name, :has_special_tool, :hitpoints, :alive, :attack
 
-def initiliaze(input_options)
-  @name = input_options[:name]
-  @hitpoints = input_options[:hitpoints]
-  @attack = input_options[:attack]
-end
+  def initiliaze(input_options)
+    @name = input_options[:name]
+    @hitpoints = input_options[:hitpoints]
+    @attack = input_options[:attack]
+    @alive = true
+    @has_special_tool = false
+  end
 
-def hit
-  @hitpoints - @attack
-end
+  def grab_tool
+    @has_special_tool == true
+    @attack = attack * 3
+  end
 
-def special_tool
-  @attack * 3
-end
-
-def grab_tool
-  has_special_tool == true
-end
+  def hit(superhero)
+    superherp.hitpoints -= attack
+  end
 
 end
 
